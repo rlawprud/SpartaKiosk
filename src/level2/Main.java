@@ -39,6 +39,7 @@ public class Main {
         // + 에외처리를 사용하여 다른 값 or 정수가 아닌 값을 입력하였을 시 경고문을 출력하도록 합니다.
         int input;
         Scanner in = new Scanner(System.in);
+        // ++ 잘못된 값을 입력하면 다시 입력받도록 합니다.
 
         System.out.println("제품 번호를 입력해주세요.");
         while (true){
@@ -56,11 +57,11 @@ public class Main {
             } catch (InputMismatchException e1) {
                 // 정수 외의 값이 들어왔을 경우
                 System.out.println("정수를 입력해주세요.");
-                break;
+                // 라인을 비워서 다시는 오류가 나지 않게끔 합니다. 처음부터 다시 입력받을 수 있게끔
+                in.nextLine();
             } catch (IndexOutOfBoundsException e2){
                 // 범위를 벗어난 값을 받았을 경우
                 System.out.println("메뉴 목록 안 정수만 입력해주세요.");
-                break;
             }
         }
     }
