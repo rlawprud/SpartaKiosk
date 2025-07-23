@@ -2,7 +2,7 @@ package level3;
 
 public class MenuItem {
     // level 2와 같이 이름, 가격, 정보를 가지는 필드입니다.
-    // 기본 접근 제어자인 이유는... 캡슐화는 level 5이기 때문입니다.
+    // 기본 접근 제어자 -> 이 패키지 안에서만 접근 가능함.
     String name;
     int price;
     String info;
@@ -13,5 +13,9 @@ public class MenuItem {
         this.name = name;
         this.price = price;
         this.info = info;
+    }
+
+     void printMenu(int index){
+        System.out.println(index + ". " + this.name + "\t| " + this.price + " |" + this.info);
     }
 }
