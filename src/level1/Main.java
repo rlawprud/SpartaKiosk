@@ -5,7 +5,7 @@ public class Main {
     // static인 이유 -> 지금 실행한 파일 = 하드코딩
     // 이후 변경점이나 유지보수를 하지 않는다는 전제로 만들어짐
     // 따라서, 기본적으로 프로그램 실행 시 생성되도록 함.
-    // -> static 을 사용함으로 main()에서 사용할 수 있게 됨.
+    // -> static 을 사용함으로 main()에서 사용할 수 있게 됨. (static은 static/final 등으로 고정된 값만 사용 가능함.)
     static void printMenu(){
         System.out.println("[Menu]");
         System.out.println("1. Basic Burger"+"\t|"+"W 5,6"+"|\t"+"기본 햄버거. 빵, 패티, 피클, 양상추");
@@ -18,14 +18,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String input;
-
+        // 메서드 사용. static 이기 때문에 사용 가능함.
         printMenu();
         while (true){
             System.out.println("번호를 입력해주세요.");
+            // 인풋을 받을 거에요.
             input = in.nextLine();
+            // input에 따른 switch
             switch (input){
                 case "1" -> {
-                    System.out.println("햄버거 선택됨"); return;
+                    System.out.println("햄버거 선택됨"); return; // 리턴에 도달하면 => 메서드가 끝남.
                 }
                 case "2" -> {
                     System.out.println("감자튀김 선택됨"); return;

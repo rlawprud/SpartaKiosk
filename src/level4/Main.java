@@ -1,7 +1,38 @@
 package level4;
 
-public class Main {
-    public static void mane(String[] args){
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
+public class Main {
+    public static void main(String[] args){
+        // Menu 객체 생성을 통해 이름 설정
+        // Menu 클래스 내 있는 List<MenuItem> 에 MenuItem 객체 생성하면서 삽입
+        Menu menu = new Menu();
+
+        List<MenuItem> list = new ArrayList<>();
+        Collections.addAll(list, new MenuItem("Basic Burger",5600, "기본 햄버거. 빵, 패티, 피클, 양상추."),
+                new MenuItem("Shrimp Burger", 6200, "탱글탱글 생새우가 들어간 새우버거."),
+                new MenuItem("Beef Burger", 6100, "소고기로 만든 비프버거. 매콤한 소스가 들어가요!"),
+                new MenuItem("Eco Burger", 7100, "100% 콩고기로 만든 에코 버거. 식물성 재료로 만들었어요."));
+        menu.menuItems.put("Burger", list);
+        list.clear();
+        Collections.addAll(list,new MenuItem("Iced Cola", 2200, "얼음이 들어가 이빨이 시리도록 차가운 콜라"),
+                new MenuItem("Bottled Water", 1200, "시원한 생수. 평창수 입니다."),
+                new MenuItem("Milk Shake", 3100, "달콤하고 고소한 밀크셰이크. 감자튀김 찍어드세요."));
+        menu.menuItems.put("Drink", list);
+        list.clear();
+        Collections.addAll(list, new MenuItem("French Fries", 2700, "바삭바삭 짭짤한 감자튀김. 바로 튀겨드려요."),
+                new MenuItem("Chicken nugget", 3700, "100% 닭가슴살로 만든 치킨너겟. 공룡 모양은 없어요."));
+        menu.menuItems.put("Side Menu", list);
+
+        menu.categoryList = new ArrayList<>(menu.menuItems.keySet());
+
+        // Kiosk 객체 생성
+        Kiosk kiosk = new Kiosk();
+
+        // Kiosk 내 시작하는 함수 호출
+        kiosk.start(menu);
     }
 }

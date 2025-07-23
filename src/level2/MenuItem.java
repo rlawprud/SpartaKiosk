@@ -2,6 +2,7 @@ package level2;
 
 public class MenuItem {
     // 메뉴명, 가격, 정보를 저장할 변수 캐스팅
+    // ! 기본 접근제어자 -> 이 패키지 안에서만 사용 가능해요.
     String name;
     int price;
     String info;
@@ -13,5 +14,8 @@ public class MenuItem {
         this.name = name;
         this.price = price;
         this.info = info;
+    }
+    void printMenu(int index){
+        System.out.println(index + ". " + this.name + "\t| " + this.price + " |" + this.info);
     }
 }
