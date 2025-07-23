@@ -52,7 +52,7 @@ public class Kiosk {
                     if (menuIndex == 0){
                         break;
                     }else {
-                        System.out.println("선택한 메뉴"+printMenu(catIndex-1,menuIndex-1));
+                        System.out.println("선택한 메뉴 : "+printMenu(catIndex-1,menuIndex-1));
                     }
                 }
             }
