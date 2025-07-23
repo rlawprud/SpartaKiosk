@@ -1,4 +1,4 @@
-package level5;
+package Challenge1;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -39,6 +39,7 @@ public class Kiosk {
                     System.out.println(i + 1 + ". " + strCategory(i));
                 }
                 System.out.println("0. 종료 \t| 종료 |");
+                System.out.println("카테고리를 선택해주세요.");
                 try{
                 catIndex = in.nextInt();
                 if (catIndex == 0) {
@@ -50,6 +51,7 @@ public class Kiosk {
                     }
                     System.out.println("0. 뒤로가기 \t| 뒤로가기 |");
                     while (true) {
+                            System.out.println("메뉴 번호를 입력해주세요.");
                         try {
                                 menuIndex = in.nextInt();
                             if (menuIndex == 0) {
