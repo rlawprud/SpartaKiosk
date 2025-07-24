@@ -31,4 +31,10 @@ public class Menu {
             this.category.add(category);
         }
     }
+    public void setMenuItems(String category){
+        if (menuItems.containsKey(category)){
+            menuItems.put(category, null);
+            this.category.add(category);
+        }
+    }
 }

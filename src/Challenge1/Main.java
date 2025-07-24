@@ -17,5 +17,6 @@ public class Main {
         Kiosk kiosk = new Kiosk(menu);
 
         kiosk.start();
+        System.out.println(menu.getMenuItems());
     }
 }
